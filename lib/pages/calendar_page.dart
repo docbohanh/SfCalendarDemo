@@ -25,7 +25,7 @@ class _ScheduleCalendarPageState extends State<ScheduleCalendarPage> {
   void initState() {
     panelOpen = frontPanelVisible.value;
     frontPanelVisible.addListener(_subscribeToValueNotifier);
-    _calendarView = CalendarView.week;
+    _calendarView = CalendarView.workWeek;
     meetings = <Meeting>[];
     addAppointmentDetails();
     events = MeetingDataSource(meetings);
@@ -63,16 +63,24 @@ class _ScheduleCalendarPageState extends State<ScheduleCalendarPage> {
     );
   }
 
-  void onCalendarTapped(CalendarTapDetails calendarTapDetails) {
+  void onCalendarTapped(CalendarTapDetails calendarTapDetails) async {
     if (calendarTapDetails.targetElement != CalendarElement.calendarCell &&
         calendarTapDetails.targetElement != CalendarElement.appointment) {
+      return;
+    }
+
+    if (calendarTapDetails.appointments == null) {
+      return;
+    }
+
+    if (calendarTapDetails.appointments.length <= 0) {
       return;
     }
 
     final Meeting appointment = calendarTapDetails.appointments.first;
     var from = DateFormat('hh:mm a').format(appointment.from).toUpperCase();
     var to = DateFormat('hh:mm a').format(appointment.to).toUpperCase();
-
+    
     final snackBar = SnackBar(
       content: Container(
         height: 44,
@@ -114,9 +122,9 @@ class _ScheduleCalendarPageState extends State<ScheduleCalendarPage> {
           date.year,
           date.month,
           date.day,
-          8 + random.nextInt(8),
-          random.nextInt(30),
-          random.nextInt(60),
+          8 + random.nextInt(2),
+          0,
+          0,
         );
         appointment.add(
           Meeting(
@@ -125,7 +133,7 @@ class _ScheduleCalendarPageState extends State<ScheduleCalendarPage> {
             '',
             null,
             startDate,
-            startDate.add(Duration(hours: 2 + random.nextInt(5))),
+            startDate.add(Duration(hours: 3 + random.nextInt(3))),
             colorCollection[random.nextInt(colorCollection.length - 1)],
             false,
             '',

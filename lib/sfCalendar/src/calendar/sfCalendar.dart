@@ -55,8 +55,8 @@ typedef _UpdateCalendarState = void Function(
 class SfCalendar extends StatefulWidget {
   SfCalendar({
     Key key,
-    this.view = CalendarView.day,
-    this.firstDayOfWeek = 7,
+    this.view = CalendarView.week,
+    this.firstDayOfWeek = DateTime.monday,
     this.headerHeight = 40,
     this.viewHeaderHeight = -1,
     this.todayHighlightColor = const Color.fromARGB(255, 0, 102, 255),

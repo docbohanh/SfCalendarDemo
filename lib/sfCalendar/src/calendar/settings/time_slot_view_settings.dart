@@ -33,16 +33,16 @@ const double _kAllDayAppointmentHeight = 20;
 /// ```
 class TimeSlotViewSettings {
   TimeSlotViewSettings(
-      {this.startHour = 0,
-      this.endHour = 24,
-      this.nonWorkingDays = const <int>[DateTime.saturday, DateTime.sunday],
+      {this.startHour = 6,
+      this.endHour = 18,
+      this.nonWorkingDays = const <int>[DateTime.sunday],
       this.timeFormat = 'h a',
       this.timeInterval = const Duration(minutes: 60),
       this.timeIntervalHeight = 40,
       this.timelineAppointmentHeight = 60,
       this.minimumAppointmentDuration,
       this.dateFormat = 'd',
-      this.dayFormat = 'EE',
+      this.dayFormat = 'E',
       this.timeRulerSize = -1,
       this.timeTextStyle});
 

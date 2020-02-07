@@ -162,7 +162,7 @@ class _TooltipPainter extends CustomPainter {
       } else {
         chart.tooltipBehavior._painter.stringValue =
             series._seriesType.contains('range')
-                ? (values[0] + '\nHigh: ' + values[1] + '\nLow: ' + values[2])
+                ? (values[0] + '\nBắt đầu: ' + values[2] + '\nKết thúc: ' + values[1])
                 : (values[0] + ' : ' + values[1]);
       }
       chart.tooltipBehavior._painter._calculateLocation(tooltipPosition);

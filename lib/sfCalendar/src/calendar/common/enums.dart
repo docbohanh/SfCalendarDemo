@@ -55,7 +55,7 @@ enum RecurrenceRange { endDate, noEndDate, count }
 /// WeekDays.thursday will indicates the appointment occurred in thursday.
 /// WeekDays.friday will indicates the appointment occurred in friday.
 /// WeekDays.saturday will indicates the appointment occurred in saturday.
-enum WeekDays { sunday, monday, tuesday, wednesday, thursday, friday, saturday }
+enum WeekDays { monday, tuesday, wednesday, thursday, friday, saturday, sunday }
 
 /// The calendar element which can be returned in the tap callback
 enum CalendarElement { header, viewHeader, calendarCell, appointment, agenda }

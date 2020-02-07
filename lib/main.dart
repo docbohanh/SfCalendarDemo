@@ -1,4 +1,5 @@
-import 'package:calendar_test/calendar_page.dart';
+import 'package:calendar_test/pages/calendar_page.dart';
+import 'package:calendar_test/pages/schedule_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -79,6 +80,15 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ScheduleCalendarPage()),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.schedule),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SchedulePage()),
               );
             },
           )

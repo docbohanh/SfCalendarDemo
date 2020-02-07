@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:timezone/timezone.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart' show DateFormat;
+import 'package:intl/intl.dart' show DateFormat, Intl;
 import 'package:flutter/scheduler.dart';
 
 part './src/calendar/sfCalendar.dart';
